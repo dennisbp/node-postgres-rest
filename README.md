@@ -1,2 +1,2 @@
 # node-postgres-rest
-Test Poweshell Jenkins
+Test Poweshell Jenkins API
