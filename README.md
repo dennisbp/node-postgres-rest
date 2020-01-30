@@ -14,17 +14,17 @@ Invoke-WebRequest -Uri http://localhost:3000/users -Method POST -Body $postParam
 $putParams = @{name="${ENV:username}";email="${ENV:email}"}
 Invoke-WebRequest -Uri http://localhost:3000/users/$ENV:id} -Method PUT -Body $putParams -UseBasicParsing
 
-# Jenkins Powershell DELETE
+<!-- # Jenkins Powershell DELETE -->
 Invoke-WebRequest -Uri http://localhost:3000/users/$ENV:id} -Method DELETE -UseBasicParsing
 
 
 switch ( $ENV:action ) {
         'GET'   { 
-# Jenkins Powershell GET 
+<!-- # Jenkins Powershell GET  -->
            Invoke-WebRequest -Uri http://localhost:3000/users -Method GET -UseBasicParsing; break   
          }
         'POST'  { 
-# Jenkins Powershell POST 
+<!-- # Jenkins Powershell POST  -->
             $postParams = @{name="${ENV:name}";email="${ENV:email}"}
             Invoke-WebRequest -Uri http://localhost:3000/users -Method POST -Body $postParams -UseBasicParsing ; break
          }
@@ -34,7 +34,7 @@ switch ( $ENV:action ) {
 #            Invoke-WebRequest -Uri http://localhost:3000/users/${ENV:id} -Method PUT -Body $putParams -UseBasicParsing ; break
          }
         'DELETE' {
-# Jenkins Powershell DELETE 
+<!-- # Jenkins Powershell DELETE  -->
            	Invoke-WebRequest -Uri http://localhost:3000/users/${ENV:id} -Method DELETE -UseBasicParsing ; break
         }
 }
