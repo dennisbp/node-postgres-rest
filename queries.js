@@ -45,7 +45,7 @@ const getUsers = (request, response) => {
   const updateUser = (request, response) => {
     const id = parseInt(request.params.id)
     const { name, email } = request.body
-  
+    console.log(name, email)
     pool.query(
       'UPDATE users SET name = $1, email = $2 WHERE id = $3',
       [name, email, id],
@@ -58,7 +58,7 @@ const getUsers = (request, response) => {
     )
   }
 
-  //Delete user
+//Delete user
   const deleteUser = (request, response) => {
     const id = parseInt(request.params.id)
   
